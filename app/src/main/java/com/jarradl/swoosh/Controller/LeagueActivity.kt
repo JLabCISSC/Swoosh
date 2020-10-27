@@ -19,7 +19,7 @@ class LeagueActivity : BaseActivity() {
     }
 
     fun onMensClicked(view: View) {
-        if (mensLeagueBtn.isChecked == false){
+        if (!mensLeagueBtn.isChecked){
             player.league = ""
         }
         else {
@@ -30,7 +30,7 @@ class LeagueActivity : BaseActivity() {
     }
 
     fun onWomensClicked(view: View) {
-        if (womensLeagueBtn.isChecked == false){
+        if (!womensLeagueBtn.isChecked){
             player.league = ""
         }
         else {
@@ -41,7 +41,7 @@ class LeagueActivity : BaseActivity() {
     }
 
     fun onCoedClicked(view: View) {
-        if (coedLeagueBtn.isChecked == false) {
+        if (!coedLeagueBtn.isChecked) {
             player.league = ""
         }
         else {

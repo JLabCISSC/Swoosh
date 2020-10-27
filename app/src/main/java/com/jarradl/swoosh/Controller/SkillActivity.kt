@@ -31,7 +31,7 @@ class SkillActivity : BaseActivity() {
 
     fun onSkillFinishedClicked(view: View) {
         if (player.skill != "") {
-            var finishActivity = Intent(this, FinishActivity::class.java)
+            val finishActivity = Intent(this, FinishActivity::class.java)
             finishActivity.putExtra(EXTRA_PLAYER, player)
             startActivity(finishActivity)
         }
