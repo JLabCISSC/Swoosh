@@ -3,14 +3,9 @@ package com.jarradl.swoosh
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class SkillActivity : BaseActivity() {
-
-    var league = ""
-
+class SkillActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_skill)
-        league = intent.getStringExtra(EXTRA_LEAGUE)
-        println(league)
     }
 }
