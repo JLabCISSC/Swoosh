@@ -33,7 +33,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.45"
-        tools:text="@string/search_league" />
+        tools:text="@string/finishToolString"/>
 
     <ProgressBar
         android:id="@+id/progressBar"

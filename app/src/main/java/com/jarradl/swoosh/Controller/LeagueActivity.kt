@@ -1,15 +1,17 @@
-package com.jarradl.swoosh
+package com.jarradl.swoosh.Controller
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.jarradl.swoosh.Model.Player
+import com.jarradl.swoosh.R
+import com.jarradl.swoosh.Utilities.EXTRA_PLAYER
 import kotlinx.android.synthetic.main.activity_league.*
 
 class LeagueActivity : BaseActivity() {
 
-    var selectedLeague = ""
+    var player = Player("","")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,41 +20,41 @@ class LeagueActivity : BaseActivity() {
 
     fun onMensClicked(view: View) {
         if (mensLeagueBtn.isChecked == false){
-            selectedLeague = ""
+            player.league = ""
         }
         else {
             womensLeagueBtn.isChecked = false
             coedLeagueBtn.isChecked = false
-            selectedLeague = "mens"
+            player.league = "mens"
         }
     }
 
     fun onWomensClicked(view: View) {
         if (womensLeagueBtn.isChecked == false){
-            selectedLeague = ""
+            player.league = ""
         }
         else {
             mensLeagueBtn.isChecked = false
             coedLeagueBtn.isChecked = false
-            selectedLeague = "womens"
+            player.league = "womens"
         }
     }
 
     fun onCoedClicked(view: View) {
         if (coedLeagueBtn.isChecked == false) {
-            selectedLeague = ""
+            player.league = ""
         }
         else {
             mensLeagueBtn.isChecked = false
             womensLeagueBtn.isChecked = false
-            selectedLeague = "co-ed"
+            player.league = "co-ed"
         }
     }
 
     fun leagueNextClicked(view: View) {
-        if (selectedLeague != "") {
+        if (player.league != "") {
             val skillActivity = Intent(this, SkillActivity::class.java)
-            skillActivity.putExtra(EXTRA_LEAGUE, selectedLeague)
+            skillActivity.putExtra(EXTRA_PLAYER, player)
             startActivity(skillActivity)
         }
         else {
